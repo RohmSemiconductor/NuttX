@@ -1,5 +1,6 @@
 # Overview of this repository
-NuttX driver libraries Rohm Sensors &amp; Bluetooth LE
+NuttX driver libraries for Rohm Sensors &amp; Bluetooth LE
+
 (NuttX is a real-time operating system (RTOS) with an emphasis on standards compliance and small footprint.
 http://nuttx.org/doku.php?id=nuttx)
 
@@ -9,4 +10,9 @@ http://nuttx.org/doku.php?id=nuttx)
 * Pressure sensor BM1383AGLV, I2C, SAD=0x5D
 * Bluetooth LE MK71251-02, UART
 
-# How to setup and test devices
+# How to setup and test devices with Sony Spresense
+
+About Sony Spresense
+https://developer.sony.com/develop/spresense/
+
+
