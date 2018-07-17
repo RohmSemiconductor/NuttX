@@ -23,14 +23,14 @@ However these files could be outdated compared to the Sony-provided files, and a
 
 Should you wish to use these drivers on a newer base, you need to modify:
 * sdk/drivers/Kconfig and Make.defs
-* bsp/board/Makefile
-* bsp/board/common/src/cxd56-sensors.c 
+* sdk/bsp/board/Makefile
+* sdk/bsp/board/common/src/cxd56-sensors.c 
 
 The actual driver files are located in:
 
 * sdk/drivers 
-* bsp/board/common
-* bsp/include/nuttx/sensors
+* sdk/bsp/board/common
+* sdk/bsp/include/nuttx/sensors
 
 The rest of the drivers are available on the [Sony GitHub](https://github.com/sonydevworld/spresense/tree/master/sdk/drivers) , and should come with the SDK.
 
