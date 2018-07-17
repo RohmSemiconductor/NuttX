@@ -18,19 +18,19 @@ http://nuttx.org/doku.php?id=nuttx)
 * Hall Effect sensor BD7411G
 * Color sensor BH1749NUC
 
-This repository contains the makefile, kconfig and cxd56-sensors.c modifications to allow you to easily test these devices.
+This repository contains the <code>makefile</code>, <code>kconfig</code> and <code>cxd56-sensors.c</code> modifications to allow you to easily test these devices.
 However these files could be outdated compared to the Sony-provided files, and as such may cause you to lose other functionality.
 
 Should you wish to use these drivers on a newer base, you need to modify:
-* sdk/drivers/Kconfig and Make.defs
-* sdk/bsp/board/Makefile
-* sdk/bsp/board/common/src/cxd56-sensors.c 
+* <code>sdk/drivers/Kconfig </code>and<code> Make.defs</code>
+* <code>sdk/bsp/board/Makefile
+* <code>sdk/bsp/board/common/src/cxd56-sensors.c 
 
 The actual driver files are located in:
 
-* sdk/drivers 
-* sdk/bsp/board/common
-* sdk/bsp/include/nuttx/sensors
+* <code>sdk/drivers 
+* <code>sdk/bsp/board/common
+* <code>sdk/bsp/include/nuttx/sensors
 
 The rest of the drivers are available on the [Sony GitHub](https://github.com/sonydevworld/spresense/tree/master/sdk/drivers) , and should come with the SDK.
 
