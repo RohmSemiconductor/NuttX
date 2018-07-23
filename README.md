@@ -35,11 +35,7 @@ The actual driver files are located in:
 The rest of the drivers are available on the [Sony GitHub](https://github.com/sonydevworld/spresense/tree/master/sdk/drivers) , and should come with the SDK.
 
 
-# Pin assignment for Sensor and BLE Add-on boards
-
-### BLE Add-on board:
-
-![](images/ble_pins.jpg)
+# Pin assignment for Sensor Add-on board
 
 ### Sensor Add-on board:
 
