@@ -43,7 +43,7 @@ The rest of the drivers are available on the [Sony GitHub](https://github.com/so
 
 ### Sensor Add-on board:
 
-![](images/sens_pins.jpg)
+![](images/sens_pins2.jpg)
 
 # How to setup and test devices with Sony Spresense
 
