@@ -1,7 +1,7 @@
 /****************************************************************************
  * bsp/include/nuttx/sensors/bd7411g.h
  *
- *   Copyright (C) 2016 Sony Corporation. All rights reserved.
+ *   Copyright (C) 2018 ROHM Co.,Ltd.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
