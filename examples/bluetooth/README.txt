@@ -24,11 +24,8 @@ examples/bluetooth
 
 
 
-  Configuration Pre-requisites:
-
-
-
-    CONFIG_BH1745NUC - BH1745NUC
+  Note: If extension board is connected in order to enable uart2 in main board you need to add a jumper to connector JP10 between pins 1 and 2.
+	Otherwise Uart will be directed to extension board connectors.
 
 
 
