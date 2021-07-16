@@ -51,9 +51,8 @@
 #include <assert.h>
 #include <termios.h>
 
-extern int board_gpio_config(uint32_t pin, int mode, bool input, bool drive,
-        int pull);
-extern void board_gpio_write(uint32_t pin, int value);
+#include <arch/board/board.h>
+#include <arch/chip/pin.h>
 
 /****************************************************************************
  * Pre-processor Definitions
@@ -194,23 +193,23 @@ int bluetooth_main(int argc, char *argv[])
 
   printf("Bluetooth start...\n");
 
-  ret = board_gpio_config(80,0,false,false,1);
+  ret = board_gpio_config(PIN_EMMC_DATA3,0,false,false,1);
   if(ret<0){
 	  int errcode = errno;
 	  fprintf(stderr, "ERROR: board_gpio_config() failed: %d\n", errcode);
   }
 
-  board_gpio_write(80,0);
+  board_gpio_write(PIN_EMMC_DATA3,0);
 
-  ret = board_gpio_config(79,0,false,false,1);
+  ret = board_gpio_config(PIN_EMMC_DATA2,0,false,false,1);
   if(ret<0){
 	  int errcode = errno;
 	  fprintf(stderr, "ERROR: board_gpio_config() failed: %d\n", errcode);
   }
 
-  board_gpio_write(79,0);
+  board_gpio_write(PIN_EMMC_DATA2,0);
   usleep(1000);
-  board_gpio_write(79,1);
+  board_gpio_write(PIN_EMMC_DATA2,1);
 
   g_data = (char *)malloc(128);
   if (!g_data)
@@ -235,15 +234,20 @@ int bluetooth_main(int argc, char *argv[])
   	  int errcode = errno;
   	  fprintf(stderr, "%s: tcgetattr() failed: %s (%d)\n", CONFIG_EXAMPLES_BLESENSOR_DEVNAME, strerror(errcode), errcode);
   }
-
+             
   ret = cfsetspeed(&tio, B57600);
   if (ret < 0)
   {
   	  int errcode = errno;
   	  fprintf(stderr, "%s: cfsetspeed() failed: %s (%d)\n", CONFIG_EXAMPLES_BLESENSOR_DEVNAME, strerror(errcode), errcode);
   }
-
-  tio.c_cflag = 0xBEDF;
+  
+  tio.c_cflag = 0;
+  tio.c_cflag += CS8;        /* Data bit 8bit */
+  tio.c_cflag += 0;          /* Stop bit 1bit */
+  tio.c_cflag += 0;          /* Paritiy none */
+  tio.c_cflag += CCTS_OFLOW; /*CTS flow control of output */
+  tio.c_cflag += CRTS_IFLOW; /*RTS flow control of output */
 
   ret = tcsetattr(fd, TCSANOW, &tio);
   if (ret < 0)
